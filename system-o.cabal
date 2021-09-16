@@ -16,45 +16,44 @@ maintainer:          code@nickdrew.io
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
-library
-  exposed-modules:  SystemO
+common lib-shared
   build-depends:    base >= 4.13 && <4.14
-                  , openapi3 >= 3.1.0
-                  , filepath
-                  , aeson
-                  , bytestring
-                  , text
+                , openapi3 >= 3.1.0
+                , filepath
+                , aeson
+                , bytestring
+                , text
   default-extensions: 
       CPP
     , OverloadedStrings
   default-language: Haskell2010
+
+common hspec-common
+  build-depends:  hspec ==2.*
+  build-tool-depends: hspec-discover:hspec-discover == 2.*
+library
+  import: lib-shared
+  exposed-modules:  SystemO
   hs-source-dirs:   src
 
 test-suite spec
+  import: lib-shared
+      ,   hspec-common
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   hs-source-dirs:
       test
   ghc-options: -Wall
-  build-depends:  base >=4.13 && <4.14
-                  , hspec ==2.*
-                  , filepath
-                  , system-o
-                  , text
-    
+  build-depends: system-o >0
   other-modules: SystemOSpec
-  default-language: Haskell2010
-  default-extensions: 
-      CPP
-    , OverloadedStrings
-  build-tool-depends: hspec-discover:hspec-discover == 2.*
+
 executable system-o
   hs-source-dirs:   exe
   main-is:          Main.hs
   default-language: Haskell2010
   build-depends:    
       base >=4.13 && <4.14
-    , system-o
+    , system-o >0
 
   -- other-modules:
   -- other-extensions:
