@@ -49,3 +49,17 @@ dist-newstyle/packagedb/ghc-8.8.3/package.cache
 dist-newstyle/packagedb/ghc-8.8.3/package.cache.lock
 dist-newstyle/packagedb/ghc-8.8.3/system-o-0.1.0.0-inplace-system-o-lib.conf
 dist-newstyle/packagedb/ghc-8.8.3/system-o-0.1.0.0-inplace.conf
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/setup-config
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/spec
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/autogen/cabal_macros.h
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/autogen/Paths_system_o.hs
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/spec-tmp/Main.hi
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/spec-tmp/Main.o
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/spec-tmp/SystemOSpec.hi
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/build/spec/spec-tmp/SystemOSpec.o
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/cache/build
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/cache/config
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/package.conf.inplace/package.cache
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/package.conf.inplace/package.cache.lock
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/test/system-o-0.1.0.0-spec.log
+dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/test/system-o-0.1.0.0.log
