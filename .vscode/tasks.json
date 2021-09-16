@@ -55,7 +55,7 @@
       "isBackground": true,
       "type": "shell",
       "label": "haskell watch",
-      "command": "cabal test --file-watch",
+      "command": "cabal v2-test --file-watch",
       "problemMatcher": [
         {
             "owner": "hspec",

@@ -1,4 +1,3 @@
-
 module SystemOSpec(spec) where
 import Test.Hspec (Spec, describe, it, shouldBe)
 import SystemO (someFunc, exampleApi)

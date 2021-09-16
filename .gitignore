@@ -63,3 +63,4 @@ dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/package.conf.in
 dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/package.conf.inplace/package.cache.lock
 dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/test/system-o-0.1.0.0-spec.log
 dist-newstyle/build/x86_64-osx/ghc-8.8.3/system-o-0.1.0.0/t/spec/test/system-o-0.1.0.0.log
+.hspec-failures
