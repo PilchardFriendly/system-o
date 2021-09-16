@@ -5,7 +5,7 @@
   "version": "2.0.0",
   "presentation": {
     "reveal": "always",
-    "panel": "new"
+    "panel": "dedicated"
   },
   "tasks": [
     {
@@ -31,13 +31,49 @@
       },
       "type": "shell",
       "label": "haskell test",
-      "command": "cabal test"
+      "command": "cabal test",
+      "problemMatcher": [
+        {
+            "owner": "hspec",
+            "fileLocation": ["relative", "${workspaceRoot}"],
+            "pattern": [
+                {
+                    "regexp": "^\\s+(.*):(\\d+):(\\d+):",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3
+                },
+                {
+                    "regexp": "^\\s+\\d+\\)\\s+(.*)",
+                    "message": 1
+                }
+            ]
+        }
+    ]
     },
     {
       "isBackground": true,
       "type": "shell",
       "label": "haskell watch",
-      "command": "cabal new-build --test --no-run-tests --file-watch"
+      "command": "cabal test --file-watch",
+      "problemMatcher": [
+        {
+            "owner": "hspec",
+            "fileLocation": ["relative", "${workspaceRoot}"],
+            "pattern": [
+                {
+                    "regexp": "^\\s+(.*):(\\d+):(\\d+):",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3
+                },
+                {
+                    "regexp": "^\\s+\\d+\\)\\s+(.*)",
+                    "message": 1
+                }
+            ]
+        }
+      ]
     }
   ]
 }

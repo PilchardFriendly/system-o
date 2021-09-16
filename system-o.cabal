@@ -20,6 +20,13 @@ library
   exposed-modules:  SystemO
   build-depends:    base >= 4.13 && <4.14
                   , openapi3 >= 3.1.0
+                  , filepath
+                  , aeson
+                  , bytestring
+                  , text
+  default-extensions: 
+      CPP
+    , OverloadedStrings
   default-language: Haskell2010
   hs-source-dirs:   src
 
@@ -32,9 +39,16 @@ test-suite spec
   build-depends:
       base >=4.13 && <4.14
     , hspec ==2.*
+    , filepath
     , system-o
+    , bytestring
+    , text
+    
   other-modules: SystemOSpec
   default-language: Haskell2010
+  default-extensions: 
+      CPP
+    , OverloadedStrings
   build-tool-depends: hspec-discover:hspec-discover == 2.*
 executable system-o
   hs-source-dirs:   exe
