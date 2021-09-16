@@ -1,19 +1,24 @@
-module SystemO (someFunc,exampleApi) where
+module SystemO (someFunc,exampleApi, emptyApi, isSubApiOf) where
 import System.FilePath
 import Data.OpenApi as O
 import Data.Aeson as J
 import Data.Text.Lazy.Encoding
 import Data.Text.Lazy
 import qualified Data.ByteString.Lazy as B
-emptyApi :: FilePath
-emptyApi =  (takeDirectory $ takeDirectory $ __FILE__) </> "examples/api-empty.yml"
+import SystemO.SubApi
+emptyApiPath :: FilePath
+emptyApiPath =  (takeDirectory . takeDirectory $ __FILE__) </> "examples/api-empty.yml"
 
 someFunc :: Int
 someFunc = 0
 
+emptyApi :: O.OpenApi
+emptyApi = mempty
+
+
 exampleApi :: IO (Maybe Text)
 exampleApi = do
-    bytes <- B.readFile emptyApi
+    bytes <- B.readFile emptyApiPath
     pure $ transform <$> parse bytes
         where
             parse :: B.ByteString -> Maybe O.OpenApi

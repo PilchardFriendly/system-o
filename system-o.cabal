@@ -15,9 +15,11 @@ maintainer:          code@nickdrew.io
 -- category:
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
+program-default-options
+  ghc-options: -haddock
 
 common haskell-stanza
-  build-depends:    base >= 4.13 && <4.14
+  build-depends:    base >= 4.14 && <4.15
   default-language: Haskell2010
 
 common lib-stanza
@@ -26,31 +28,41 @@ common lib-stanza
                 , aeson
                 , bytestring
                 , text
+                , lens     >=4.16.1   && <5.1
   default-extensions: 
       CPP
     , OverloadedStrings
-
+    , TypeApplications
+common openapi-depends-stanza
+  build-depends: insert-ordered-containers
 common hspec-stanza
   build-depends:  hspec ==2.*
+                , hspec-expectations ==0.8.2.*
+                , QuickCheck ==2.14.*
   build-tool-depends: hspec-discover:hspec-discover == 2.*
 
 library
   import: haskell-stanza
         , lib-stanza
+        , openapi-depends-stanza
   exposed-modules:  SystemO
   hs-source-dirs:   src
+  other-modules: SystemO.SubApi
 
 test-suite spec
   import: haskell-stanza
       ,   lib-stanza
       ,   hspec-stanza
+      ,   openapi-depends-stanza
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   hs-source-dirs:
       test
   ghc-options: -Wall
   build-depends: system-o
+    , quickcheck-instances
   other-modules: SystemOSpec
+    , SystemO.Arbitraries
 
 executable system-o
   import: haskell-stanza
